@@ -1,0 +1,7 @@
+# Left out of the plugin zip and the WordPress.org release.
+/.git
+/.github
+/.wordpress-org
+/.distignore
+/.gitattributes
+/README.md

@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "onlinecompiler/code-runner",
+	"version": "0.1.0",
+	"title": "Code runner",
+	"category": "widgets",
+	"icon": "editor-code",
+	"description": "A code example your readers can edit and run in the page, in Python, C++, Java and dozens more languages. Runs on OnlineCompiler.io.",
+	"keywords": [ "code", "compiler", "run", "programming", "python" ],
+	"textdomain": "onlinecompiler",
+	"attributes": {
+		"code": { "type": "string", "default": "" },
+		"stdin": { "type": "string", "default": "" },
+		"lang": { "type": "string", "default": "" },
+		"theme": { "type": "string", "default": "" },
+		"height": { "type": "number", "default": 0 },
+		"readOnly": { "type": "boolean", "default": false },
+		"langSelect": { "type": "string", "default": "" },
+		"problem": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"editorScript": "onlinecompiler-block-editor",
+	"editorStyle": "onlinecompiler-block-editor"
+}

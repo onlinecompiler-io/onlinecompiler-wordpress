@@ -1,0 +1,6 @@
+# GitHub's "Download ZIP" and release archives hold only the plugin itself.
+/.github export-ignore
+/.wordpress-org export-ignore
+/.distignore export-ignore
+/.gitattributes export-ignore
+/README.md export-ignore
