@@ -74,9 +74,9 @@ function onlinecompiler_render( $args ) {
 		if ( current_user_can( 'manage_options' ) ) {
 			$html .= sprintf(
 				'<p class="onlinecompiler-notice"><strong>%1$s</strong> <a href="%2$s">%3$s</a></p>',
-				esc_html__( 'This code runner needs a widget key.', 'onlinecompiler' ),
+				esc_html__( 'This code runner needs a widget key.', 'onlinecompiler-io-code-runner' ),
 				esc_url( admin_url( 'options-general.php?page=onlinecompiler' ) ),
-				esc_html__( 'Add it in Settings, OnlineCompiler.io.', 'onlinecompiler' )
+				esc_html__( 'Add it in Settings, OnlineCompiler.io.', 'onlinecompiler-io-code-runner' )
 			);
 		}
 		return $html;

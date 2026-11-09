@@ -36,9 +36,9 @@ function onlinecompiler_settings() {
  */
 function onlinecompiler_themes() {
 	return array(
-		'auto'  => __( 'Follow the reader\'s system (light or dark)', 'onlinecompiler' ),
-		'light' => __( 'Light', 'onlinecompiler' ),
-		'dark'  => __( 'Dark', 'onlinecompiler' ),
+		'auto'  => __( 'Follow the reader\'s system (light or dark)', 'onlinecompiler-io-code-runner' ),
+		'light' => __( 'Light', 'onlinecompiler-io-code-runner' ),
+		'dark'  => __( 'Dark', 'onlinecompiler-io-code-runner' ),
 	);
 }
 
@@ -49,9 +49,9 @@ function onlinecompiler_themes() {
  */
 function onlinecompiler_locales() {
 	return array(
-		''   => __( 'English', 'onlinecompiler' ),
-		'pt' => __( 'Portuguese (Brazil)', 'onlinecompiler' ),
-		'es' => __( 'Spanish', 'onlinecompiler' ),
+		''   => __( 'English', 'onlinecompiler-io-code-runner' ),
+		'pt' => __( 'Portuguese (Brazil)', 'onlinecompiler-io-code-runner' ),
+		'es' => __( 'Spanish', 'onlinecompiler-io-code-runner' ),
 	);
 }
 
@@ -73,7 +73,7 @@ function onlinecompiler_sanitize_settings( $input ) {
 		add_settings_error(
 			ONLINECOMPILER_OPTION,
 			'onlinecompiler_key',
-			__( 'That doesn\'t look like a widget key: copy it from the Widgets page of your OnlineCompiler.io dashboard. The old key was kept.', 'onlinecompiler' )
+			__( 'That doesn\'t look like a widget key: copy it from the Widgets page of your OnlineCompiler.io dashboard. The old key was kept.', 'onlinecompiler-io-code-runner' )
 		);
 	}
 
@@ -111,10 +111,10 @@ function onlinecompiler_register_settings() {
 
 	add_settings_section( 'onlinecompiler_main', '', '__return_false', 'onlinecompiler' );
 
-	add_settings_field( 'onlinecompiler_key', __( 'Widget key', 'onlinecompiler' ), 'onlinecompiler_field_key', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_key' ) );
-	add_settings_field( 'onlinecompiler_lang', __( 'Default language', 'onlinecompiler' ), 'onlinecompiler_field_lang', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_lang' ) );
-	add_settings_field( 'onlinecompiler_theme', __( 'Theme', 'onlinecompiler' ), 'onlinecompiler_field_theme', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_theme' ) );
-	add_settings_field( 'onlinecompiler_locale', __( 'Buttons and messages in', 'onlinecompiler' ), 'onlinecompiler_field_locale', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_locale' ) );
+	add_settings_field( 'onlinecompiler_key', __( 'Widget key', 'onlinecompiler-io-code-runner' ), 'onlinecompiler_field_key', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_key' ) );
+	add_settings_field( 'onlinecompiler_lang', __( 'Default language', 'onlinecompiler-io-code-runner' ), 'onlinecompiler_field_lang', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_lang' ) );
+	add_settings_field( 'onlinecompiler_theme', __( 'Theme', 'onlinecompiler-io-code-runner' ), 'onlinecompiler_field_theme', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_theme' ) );
+	add_settings_field( 'onlinecompiler_locale', __( 'Buttons and messages in', 'onlinecompiler-io-code-runner' ), 'onlinecompiler_field_locale', 'onlinecompiler', 'onlinecompiler_main', array( 'label_for' => 'onlinecompiler_locale' ) );
 }
 add_action( 'admin_init', 'onlinecompiler_register_settings' );
 
@@ -132,8 +132,8 @@ function onlinecompiler_field_key() {
 	echo '<p class="description">';
 	printf(
 		/* translators: 1: link to the OnlineCompiler.io Widgets page, 2: this site's domain. */
-		esc_html__( 'Create a free widget key on the %1$s of your OnlineCompiler.io dashboard (sign in with Google), and set its allowed domain to %2$s so only this site can use it. Widget keys are made to sit in public pages: they can run code in the widget, never call the REST API.', 'onlinecompiler' ),
-		'<a href="https://api.onlinecompiler.io/compilers/widgets/" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Widgets page', 'onlinecompiler' ) . '</a>',
+		esc_html__( 'Create a free widget key on the %1$s of your OnlineCompiler.io dashboard (sign in with Google), and set its allowed domain to %2$s so only this site can use it. Widget keys are made to sit in public pages: they can run code in the widget, never call the REST API.', 'onlinecompiler-io-code-runner' ),
+		'<a href="https://api.onlinecompiler.io/compilers/widgets/" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Widgets page', 'onlinecompiler-io-code-runner' ) . '</a>',
 		'<code>' . esc_html( (string) $host ) . '</code>'
 	);
 	echo '</p>';
@@ -166,7 +166,7 @@ function onlinecompiler_field_lang() {
 	foreach ( onlinecompiler_languages() as $id => $language ) {
 		$options[ $id ] = $language[0];
 	}
-	onlinecompiler_select( 'lang', $options, __( 'For a code runner that doesn\'t name its language. Each block or shortcode can choose its own.', 'onlinecompiler' ) );
+	onlinecompiler_select( 'lang', $options, __( 'For a code runner that doesn\'t name its language. Each block or shortcode can choose its own.', 'onlinecompiler-io-code-runner' ) );
 }
 
 /**
@@ -180,7 +180,7 @@ function onlinecompiler_field_theme() {
  * The widget language field.
  */
 function onlinecompiler_field_locale() {
-	onlinecompiler_select( 'locale', onlinecompiler_locales(), __( 'The Run button, the console and the widget\'s messages. Your code is not translated.', 'onlinecompiler' ) );
+	onlinecompiler_select( 'locale', onlinecompiler_locales(), __( 'The Run button, the console and the widget\'s messages. Your code is not translated.', 'onlinecompiler-io-code-runner' ) );
 }
 
 /**
@@ -188,8 +188,8 @@ function onlinecompiler_field_locale() {
  */
 function onlinecompiler_add_settings_page() {
 	add_options_page(
-		__( 'OnlineCompiler.io Code Runner', 'onlinecompiler' ),
-		__( 'OnlineCompiler.io', 'onlinecompiler' ),
+		__( 'OnlineCompiler.io Code Runner', 'onlinecompiler-io-code-runner' ),
+		__( 'OnlineCompiler.io', 'onlinecompiler-io-code-runner' ),
 		'manage_options',
 		'onlinecompiler',
 		'onlinecompiler_render_settings_page'
@@ -206,7 +206,7 @@ function onlinecompiler_render_settings_page() {
 	}
 	echo '<div class="wrap">';
 	echo '<h1>' . esc_html( get_admin_page_title() ) . '</h1>';
-	echo '<p>' . esc_html__( 'Add a Code runner block to any post or page, or use the shortcode in the classic editor:', 'onlinecompiler' ) . '</p>';
+	echo '<p>' . esc_html__( 'Add a Code runner block to any post or page, or use the shortcode in the classic editor:', 'onlinecompiler-io-code-runner' ) . '</p>';
 	echo '<p><code>[onlinecompiler lang="python"]print("Hello")[/onlinecompiler]</code></p>';
 	echo '<form action="options.php" method="post">';
 	settings_fields( 'onlinecompiler' );
@@ -216,8 +216,8 @@ function onlinecompiler_render_settings_page() {
 	echo '<p>' . wp_kses(
 		sprintf(
 			/* translators: %s: link to the widget documentation. */
-			__( 'Every option the widget has, such as tests readers can judge their code against, is in the %s.', 'onlinecompiler' ),
-			'<a href="https://onlinecompiler.io/docs/widget" target="_blank" rel="noopener noreferrer">' . esc_html__( 'widget documentation', 'onlinecompiler' ) . '</a>'
+			__( 'Every option the widget has, such as tests readers can judge their code against, is in the %s.', 'onlinecompiler-io-code-runner' ),
+			'<a href="https://onlinecompiler.io/docs/widget" target="_blank" rel="noopener noreferrer">' . esc_html__( 'widget documentation', 'onlinecompiler-io-code-runner' ) . '</a>'
 		),
 		array(
 			'a' => array(
@@ -237,7 +237,7 @@ function onlinecompiler_render_settings_page() {
  * @return string[]
  */
 function onlinecompiler_action_links( $links ) {
-	array_unshift( $links, '<a href="' . esc_url( admin_url( 'options-general.php?page=onlinecompiler' ) ) . '">' . esc_html__( 'Settings', 'onlinecompiler' ) . '</a>' );
+	array_unshift( $links, '<a href="' . esc_url( admin_url( 'options-general.php?page=onlinecompiler' ) ) . '">' . esc_html__( 'Settings', 'onlinecompiler-io-code-runner' ) . '</a>' );
 	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( ONLINECOMPILER_DIR . 'onlinecompiler.php' ), 'onlinecompiler_action_links' );
@@ -255,9 +255,9 @@ function onlinecompiler_missing_key_notice() {
 	}
 	printf(
 		'<div class="notice notice-info"><p>%1$s <a href="%2$s">%3$s</a></p></div>',
-		esc_html__( 'OnlineCompiler.io Code Runner needs a widget key before code runners can run.', 'onlinecompiler' ),
+		esc_html__( 'OnlineCompiler.io Code Runner needs a widget key before code runners can run.', 'onlinecompiler-io-code-runner' ),
 		esc_url( admin_url( 'options-general.php?page=onlinecompiler' ) ),
-		esc_html__( 'Add it in Settings', 'onlinecompiler' )
+		esc_html__( 'Add it in Settings', 'onlinecompiler-io-code-runner' )
 	);
 }
 add_action( 'admin_notices', 'onlinecompiler_missing_key_notice' );

@@ -10,7 +10,7 @@
  * Author URI:        https://onlinecompiler.io
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       onlinecompiler
+ * Text Domain:       onlinecompiler-io-code-runner
  *
  * @package OnlineCompiler
  */

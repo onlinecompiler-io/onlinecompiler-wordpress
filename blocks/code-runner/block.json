@@ -8,7 +8,7 @@
 	"icon": "editor-code",
 	"description": "A code example your readers can edit and run in the page, in Python, C++, Java and dozens more languages. Runs on OnlineCompiler.io.",
 	"keywords": [ "code", "compiler", "run", "programming", "python" ],
-	"textdomain": "onlinecompiler",
+	"textdomain": "onlinecompiler-io-code-runner",
 	"attributes": {
 		"code": { "type": "string", "default": "" },
 		"stdin": { "type": "string", "default": "" },

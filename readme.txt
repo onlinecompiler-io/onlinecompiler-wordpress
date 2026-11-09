@@ -1,5 +1,5 @@
 === OnlineCompiler.io Code Runner ===
-Contributors: onlinecompilerio
+Contributors: onlinecompiler
 Tags: code, compiler, programming, education, code editor
 Requires at least: 6.3
 Tested up to: 7.1

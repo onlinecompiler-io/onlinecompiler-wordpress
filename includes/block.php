@@ -48,7 +48,7 @@ function onlinecompiler_register_block() {
 		) . ';',
 		'before'
 	);
-	wp_set_script_translations( 'onlinecompiler-block-editor', 'onlinecompiler' );
+	wp_set_script_translations( 'onlinecompiler-block-editor', 'onlinecompiler-io-code-runner' );
 
 	register_block_type(
 		ONLINECOMPILER_DIR . 'blocks/code-runner',
