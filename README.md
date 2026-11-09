@@ -1,8 +1,12 @@
-# OnlineCompiler.io Code Runner for WordPress
+# OnlineCompiler.io Code Runner: an online compiler for WordPress
 
-Code examples your readers can edit and run in the page, in Python, C++, Java, SQL and dozens more languages. Add a **Code runner** block, or the `[onlinecompiler]` shortcode in the classic editor, and readers get an editor with a Run button in your post. The code runs on [OnlineCompiler.io](https://onlinecompiler.io) in an isolated sandbox, not on your server.
+A WordPress plugin that turns code examples into runnable code blocks. Add a **Code runner** block to a post or page (or the `[onlinecompiler]` shortcode in the classic editor), and readers get a code editor with a Run button in the page: they edit the code and its input and run it, with no account. Python, C, C++, Java, JavaScript, TypeScript, Go, Rust, PHP, SQL and 46 languages in all.
 
-![A code runner on a post](.wordpress-org/screenshot-1.png)
+The code runs on [OnlineCompiler.io](https://onlinecompiler.io), a code execution API, in an isolated sandbox with no network access, not on your WordPress server. Syntax highlighters only show code; this plugin runs it.
+
+![A runnable Python example on a WordPress post](.wordpress-org/screenshot-1.png)
+
+**Good for:** programming tutorials and blogs, online courses and coding lessons, teachers' exercises with tests students judge their code against, and runnable documentation.
 
 ## Install
 
@@ -17,7 +21,7 @@ Requires WordPress 6.3 or later and PHP 7.4 or later.
 
 **Block editor:** add a **Code runner** block, write the code and, if the program reads input, its standard input. The sidebar sets the language, theme, height, read-only code and the language menu. Put a stored problem's id under **Problem** to show that problem, with its statement and tests, instead.
 
-![The Code runner block in the editor](.wordpress-org/screenshot-2.png)
+![The Code runner block in the WordPress block editor, with its settings](.wordpress-org/screenshot-2.png)
 
 **Shortcode:**
 
@@ -57,6 +61,30 @@ What is sent where is listed under "External services" in [readme.txt](readme.tx
 | `includes/shortcode.php` | `[onlinecompiler]`, which undoes what the classic editor does to code |
 | `includes/settings.php` | Settings, OnlineCompiler.io |
 | `includes/languages.php` | The compiler ids, copied from [the compiler list](https://onlinecompiler.io/docs/compilers) |
+
+## FAQ
+
+**How do I add an online compiler to WordPress?** Install the plugin, paste a free widget key in Settings, OnlineCompiler.io, and add a Code runner block. Choose the language in the block's sidebar.
+
+**Do readers need an account?** No. Only the site owner needs an OnlineCompiler.io account, for the widget key.
+
+**Does the code run on my server?** No. Each run gets a fresh sandbox on OnlineCompiler.io with no network access, thrown away afterwards.
+
+**Does it slow the page?** The widget script loads only on pages with a Code runner, deferred, and each runner connects when it scrolls into view.
+
+**Can students be graded?** Yes: show a problem stored in your OnlineCompiler.io account, with its statement and hidden tests, and readers judge their code against it.
+
+**Is it free?** The plugin is free and open source. Running code uses your OnlineCompiler.io account, which has a free plan with no credit card ([pricing](https://onlinecompiler.io/pricing)).
+
+## Languages
+
+Python, C, C++ (and C++20), Java, JavaScript (Node.js), TypeScript (Deno), C#, F#, Visual Basic, Go, Rust, PHP, Ruby, Kotlin, Swift, Dart, Scala, Groovy, Clojure, Haskell, OCaml, Elixir, Erlang, Racket, Common Lisp, Prolog, R, Julia, Octave, Fortran, COBOL, Pascal, Ada, D, Nim, Zig, Crystal, Perl, Lua, Bash, PowerShell, Objective-C, FreeBASIC, Assembly (NASM), SQL (SQLite) and DuckDB.
+
+## Related
+
+- [Widget documentation](https://onlinecompiler.io/docs/widget): every option, tests on the page and the JavaScript API.
+- [OnlineCompiler.io API](https://onlinecompiler.io/docs): run code and judge it against test cases from your own app.
+- [onlinecompiler-io on GitHub](https://github.com/onlinecompiler-io): the Python and Node clients, the MCP server and starter templates.
 
 ## License
 

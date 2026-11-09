@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:       OnlineCompiler.io Code Runner
+ * Plugin Name:       OnlineCompiler.io Code Runner: Online Compiler and Runnable Code Blocks
  * Plugin URI:        https://github.com/onlinecompiler-io/onlinecompiler-wordpress
- * Description:       Code examples your readers can edit and run in the page, in Python, C++, Java and dozens more languages. Add the Code runner block or the [onlinecompiler] shortcode.
+ * Description:       An online compiler for your posts: runnable code blocks readers edit and run in Python, C++, Java, JavaScript, SQL and 46 languages in all. Add the Code runner block or the [onlinecompiler] shortcode.
  * Version:           0.1.0
  * Requires at least: 6.3
  * Requires PHP:      7.4
