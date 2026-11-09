@@ -102,7 +102,7 @@
 					{ title: __( 'Problem', 'onlinecompiler-io-code-runner' ), initialOpen: !! problem },
 					el( TextControl, withCommon( {
 						label: __( 'Problem id', 'onlinecompiler-io-code-runner' ),
-						help: __( 'A problem stored in your OnlineCompiler.io account: readers see its statement and judge their code against its tests. It replaces the code and input here.', 'onlinecompiler-io-code-runner' ),
+						help: __( 'A problem stored in your OnlineCompiler.io account: readers see its statement and starter code, and judge their code against its sample tests. It replaces the code and input here.', 'onlinecompiler-io-code-runner' ),
 						value: a.problem,
 						onChange: function ( value ) { set( { problem: value } ); },
 					} ) )
@@ -120,7 +120,7 @@
 			);
 
 			var body = problem
-				? el( 'div', { className: 'onlinecompiler-block__note' }, __( 'Readers will see this problem, with its statement, starting code and tests, loaded from your account.', 'onlinecompiler-io-code-runner' ) )
+				? el( 'div', { className: 'onlinecompiler-block__note' }, __( 'Readers will see this problem, with its statement, starter code and sample tests, loaded from your account.', 'onlinecompiler-io-code-runner' ) )
 				: [
 					el( PlainText, {
 						key: 'code',

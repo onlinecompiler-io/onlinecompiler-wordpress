@@ -19,7 +19,7 @@ Requires WordPress 6.3 or later and PHP 7.4 or later.
 
 ## Use it
 
-**Block editor:** add a **Code runner** block, write the code and, if the program reads input, its standard input. The sidebar sets the language, theme, height, read-only code and the language menu. Put a stored problem's id under **Problem** to show that problem, with its statement and tests, instead.
+**Block editor:** add a **Code runner** block, write the code and, if the program reads input, its standard input. The sidebar sets the language, theme, height, read-only code and the language menu. Put a stored problem's id under **Problem** to show that problem instead, with its statement, starter code and sample tests.
 
 ![The Code runner block in the WordPress block editor, with its settings](.wordpress-org/screenshot-2.png)
 
@@ -70,9 +70,9 @@ What is sent where is listed under "External services" in [readme.txt](readme.tx
 
 **Does the code run on my server?** No. Each run gets a fresh sandbox on OnlineCompiler.io with no network access, thrown away afterwards.
 
-**Does it slow the page?** The widget script loads only on pages with a Code runner, deferred, and each runner connects when it scrolls into view.
+**Does it slow the page?** The widget script loads only on pages with a Code runner, deferred, and each runner connects when it scrolls into view (a stored problem connects when the page loads).
 
-**Can students be graded?** Yes: show a problem stored in your OnlineCompiler.io account, with its statement and hidden tests, and readers judge their code against it.
+**Can readers' code be checked against tests?** Yes: show a problem stored in your OnlineCompiler.io account, and readers judge their code against its sample tests. Grading against hidden tests needs a session from your own server, which the plugin doesn't create ([widget docs](https://onlinecompiler.io/docs/widget)).
 
 **Is it free?** The plugin is free and open source. Running code uses your OnlineCompiler.io account, which has a free plan with no credit card ([pricing](https://onlinecompiler.io/pricing)).
 

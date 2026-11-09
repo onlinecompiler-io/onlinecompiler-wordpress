@@ -28,11 +28,11 @@ The code runs on [OnlineCompiler.io](https://onlinecompiler.io), a code executio
 * **46 languages**, with the code highlighted as readers type.
 * **Runs in a sandbox, not on your server:** a fresh sandbox for each run, no network access, thrown away afterwards.
 * **Standard input:** give the program its input; readers can change it.
-* **Graded exercises:** show a problem stored in your OnlineCompiler.io account, with its statement and tests, and readers judge their code against it.
+* **Exercises with tests:** show a problem stored in your OnlineCompiler.io account, with its statement and starter code, and readers judge their code against its sample tests.
 * **Read-only examples, themes and heights:** light, dark or the reader's system setting; the editor fits the code or takes the height you set.
 * **Buttons and messages in English, Portuguese or Spanish.**
 * **Search-friendly:** the code is in the page as text before the editor loads, so search engines index it.
-* **Light on your site:** the widget script loads only on pages with a Code runner, deferred, and connects only when the runner scrolls into view.
+* **Light on your site:** the widget script loads only on pages with a Code runner, deferred, and each runner connects only when it scrolls into view (one showing a stored problem connects when the page loads).
 
 = Supported languages =
 
@@ -92,15 +92,15 @@ Yes, with the `[onlinecompiler]` shortcode; its attributes are listed above. For
 
 = Does it slow down my site? =
 
-The widget script loads only on pages that have a Code runner, and deferred, so it doesn't hold up the page. Each runner connects only when it scrolls into view.
+The widget script loads only on pages that have a Code runner, and deferred, so it doesn't hold up the page. Each runner connects only when it scrolls into view; one showing a stored problem connects when the page loads.
 
 = What if the service can't be reached? =
 
 The code is in the page as text, so readers still see it. Only the Run button needs OnlineCompiler.io.
 
-= Can students' code be graded? =
+= Can readers' code be checked against tests? =
 
-Yes. Store a problem with tests in your OnlineCompiler.io account and put its id in the block's Problem setting. Readers see the statement and judge their code against the tests, including hidden tests whose input and expected output they never see. Tests written on the page, without a stored problem, are described in the [widget documentation](https://onlinecompiler.io/docs/widget).
+Readers can check their code against tests. Store a problem with tests in your OnlineCompiler.io account and put its id in the block's Problem setting: readers see the statement and starter code, and Judge checks their code against the problem's sample tests. Grading against hidden tests, with a recorded score, needs a session your own server creates for each student, which this plugin doesn't do; the [widget documentation](https://onlinecompiler.io/docs/widget) describes it, and tests written into the page with the widget's own markup.
 
 = Is the widget key secret? =
 
@@ -110,7 +110,7 @@ No. Widget keys are made to sit in public pages: they can run code in the widget
 
 This plugin connects to OnlineCompiler.io, a code execution service run by RunCode Inc., to run the code in your code runners. Without it the code can't run.
 
-* **On pages with a code runner**, the reader's browser loads the widget script from `https://onlinecompiler.io/widget.js`. When the code runner scrolls into view, the widget connects to `api.onlinecompiler.io`, sending your widget key; the browser adds your site's address (its origin), which is how the key's allowed domain is checked.
+* **On pages with a code runner**, the reader's browser loads the widget script from `https://onlinecompiler.io/widget.js`. When the code runner scrolls into view (for a stored problem, when the page loads), the widget connects to `api.onlinecompiler.io`, sending your widget key; the browser adds your site's address (its origin), which is how the key's allowed domain is checked.
 * **When a reader presses Run or Judge**, the widget sends the code, its input and the language to `api.onlinecompiler.io`, and shows the result. With a stored problem, the widget also loads the problem's statement and visible tests from there.
 * As with any website, the service sees the reader's IP address. Readers don't sign in and the plugin sends no other data about them.
 
