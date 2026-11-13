@@ -10,10 +10,9 @@ The code runs on [OnlineCompiler.io](https://onlinecompiler.io), a code executio
 
 ## Install
 
-1. Download this repository as a ZIP (**Code**, **Download ZIP**).
-2. In WordPress, go to **Plugins**, **Add New Plugin**, **Upload Plugin**, choose the ZIP and activate it.
-3. Create a free widget key on the [Widgets page](https://api.onlinecompiler.io/compilers/widgets/) of your OnlineCompiler.io dashboard (sign in with Google). Set its allowed domain to your site's domain.
-4. Paste the key in **Settings**, **OnlineCompiler.io**.
+1. In WordPress, go to **Plugins**, **Add New Plugin**, search for **OnlineCompiler** and install and activate **OnlineCompiler.io Code Runner** ([WordPress.org listing](https://wordpress.org/plugins/onlinecompiler-io-code-runner/)). With WP-CLI: `wp plugin install onlinecompiler-io-code-runner --activate`. To install from this repository instead, download it as a ZIP (**Code**, **Download ZIP**) and use **Upload Plugin** on the same page.
+2. Create a free widget key on the [Widgets page](https://api.onlinecompiler.io/compilers/widgets/) of your OnlineCompiler.io dashboard (sign in with Google). Set its allowed domain to your site's domain.
+3. Paste the key in **Settings**, **OnlineCompiler.io**.
 
 Requires WordPress 6.3 or later and PHP 7.4 or later.
 
